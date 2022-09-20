@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface JsonLessonAPI {
     @GET("/api/lessons/1")
-    suspend fun getLesson(): Response<List<LessonJson>>
+    suspend fun getLesson(): Response<LessonJson>
 }
