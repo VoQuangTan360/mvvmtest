@@ -18,8 +18,8 @@ import javax.inject.Inject
 class jsonPlaceHolderViewModel @Inject constructor(private val jsonLessonRepositories: JsonLessonRepositories):
     BaseViewModel() {
 
-    private var _listPosts = MutableLiveData<List<Lesson>>()
-    val listPots: LiveData<List<Lesson>>
+    private var _listPosts = MutableLiveData<LessonJson>()
+    val listPots: LiveData<LessonJson>
         get() = _listPosts
 
     override fun fetchData() {

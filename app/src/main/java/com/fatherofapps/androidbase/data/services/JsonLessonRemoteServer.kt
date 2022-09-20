@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 
 class JsonLessonRemoteServer @Inject constructor(private val jsonLessonAPI: JsonLessonAPI):BaseRemoteService() {
-    suspend fun getAllAccount(): NetworkResult<List<LessonJson>>{
+    suspend fun getAllAccount(): NetworkResult<LessonJson>{
         return callApi {jsonLessonAPI.getLesson() }
     }
 

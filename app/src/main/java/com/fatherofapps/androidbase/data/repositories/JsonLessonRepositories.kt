@@ -16,8 +16,8 @@ class JsonLessonRepositories @Inject constructor(
         suspend fun getAllAccount() = withContext(dispatcher){
             when (val result =jsonLessonRemoteServer.getAllAccount()){
                 is NetworkResult.Success ->{
-
-                    result.data.map { it.toLesson() }
+                    result.data
+//                    result.data.map { it.toLesson() }
                 }
                 is NetworkResult.Error ->{
                     throw result.exception
