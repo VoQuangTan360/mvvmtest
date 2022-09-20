@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.fatherofapps.androidbase.base.viewmodel.BaseViewModel
+import com.fatherofapps.androidbase.data.modeljson.LessonJson
 import com.fatherofapps.androidbase.data.models.Lesson
 
 import com.fatherofapps.androidbase.data.repositories.CustomerRepository
@@ -25,9 +26,8 @@ class jsonPlaceHolderViewModel @Inject constructor(private val jsonLessonReposit
         showLoading(true)
         parentJob = viewModelScope.launch(handler) {
             val post = jsonLessonRepositories.getAllAccount()
+
             _listPosts.postValue(post)
-
-
         }
         registerJobFinish()
     }
