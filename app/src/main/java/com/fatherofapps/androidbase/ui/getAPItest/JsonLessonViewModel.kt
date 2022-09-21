@@ -18,14 +18,20 @@ import javax.inject.Inject
 class jsonPlaceHolderViewModel @Inject constructor(private val jsonLessonRepositories: JsonLessonRepositories):
     BaseViewModel() {
 
-    private var _listPosts = MutableLiveData<List<Lesson>>()
-    val listPots: LiveData<List<Lesson>>
+    private var _listPosts = MutableLiveData<LessonJson>()
+    val listPots: LiveData<LessonJson>
         get() = _listPosts
 
     override fun fetchData() {
         showLoading(true)
         parentJob = viewModelScope.launch(handler) {
             val post = jsonLessonRepositories.getAllAccount()
+
+//            _listPosts.toString()
+//            _listPosts.postValue()
+            _listPosts.postValue(post)
+
+
 
             _listPosts.postValue(post)
         }
