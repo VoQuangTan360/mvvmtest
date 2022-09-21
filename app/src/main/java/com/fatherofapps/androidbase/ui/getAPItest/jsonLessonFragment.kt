@@ -39,8 +39,10 @@ class jsonLessonFragment: BaseFragment() {
         registerObserverLoadingEvent(viewModel,viewLifecycleOwner)
         viewModel.listPots.observe(viewLifecycleOwner){
                 posts ->
-            if(posts.isNotEmpty()){
-                val titles = posts.map { "${it.status} \n" }
+            if(posts !=null){
+                val titles = posts.idStudent
+//                isNotEmpty()
+//                { "${it.status} \n" }
                 dataBingding.tvResult.text = titles.toString()
             }
         }

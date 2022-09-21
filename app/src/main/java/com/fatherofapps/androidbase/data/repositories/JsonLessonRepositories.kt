@@ -17,7 +17,7 @@ class JsonLessonRepositories @Inject constructor(
             when (val result =jsonLessonRemoteServer.getAllAccount()){
                 is NetworkResult.Success ->{
 
-                    result  
+                    result.data
                 }
                 is NetworkResult.Error ->{
                     throw result.exception
