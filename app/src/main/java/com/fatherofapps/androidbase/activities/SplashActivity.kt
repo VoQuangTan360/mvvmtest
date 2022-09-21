@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         findViewById<ImageView>(R.id.imgLaunch).postDelayed({
             openMainActivity()
-        }, 3000)
+        }, 100)
     }
 
     private fun openMainActivity() {

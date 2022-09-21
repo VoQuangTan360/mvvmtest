@@ -26,11 +26,14 @@ class jsonPlaceHolderViewModel @Inject constructor(private val jsonLessonReposit
         showLoading(true)
         parentJob = viewModelScope.launch(handler) {
             val post = jsonLessonRepositories.getAllAccount()
+
 //            _listPosts.toString()
 //            _listPosts.postValue()
             _listPosts.postValue(post)
 
 
+
+            _listPosts.postValue(post)
         }
         registerJobFinish()
     }
